@@ -53,6 +53,14 @@
           <span class="link-title">Calendar</span>
         </a>
       </li>
+
+      <li class="nav-item">
+        <a href="{{ route('products.index') }}" class="nav-link">
+          <i class="link-icon" data-feather="calendar"></i>
+          <span class="link-title">Products</span>
+        </a>
+      </li>
+
       <li class="nav-item nav-category"></li>
       {{---
       <li class="nav-item {{ active_class(['ui-components/*']) }}">
