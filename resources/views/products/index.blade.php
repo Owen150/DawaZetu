@@ -17,8 +17,9 @@
     <div class="card">
       <div class="card-body">
         <h6 class="card-title">Products Table</h6>
+        <a href="{{ route('products.create') }}"><button class="btn btn-primary mb-3">Add Product</button></a>
         <div class="table-responsive">
-          <table id="dataTableExample" class="table">
+          <table id="dataTableExample" class="table table-hover text-center">
             <thead>
               <tr>
                 <th>#</th>
@@ -29,6 +30,7 @@
                 <th>Package Size</th>
                 <th>Package Quantity</th>
                 <th>Items in Box</th>
+                <th>Category</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -46,12 +48,14 @@
                     <td>{{ $product->package_size }}</td>
                     <td>{{ $product->package_quantity }}</td>
                     <td>{{ $product->no_of_items_in_box }}</td>
-                    <td><a href="{{ route('products.edit', $product->id) }}"><span class="p-2">Edit</span></a>
+                    <td>{{ $product->category_id }}</td>
+                    <td>
+                      <a href="{{ route('products.edit', $product->id) }}"><button class="btn btn-primary">Edit</button></a>
                         <form id='frm'
                          action="{{ route('products.destroy',$product->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <span id="product-delete">Delete</span>
+                            <span id="product-delete"><button class="btn btn-danger">Delete</button></span>
                         </form>
                     </td>
                 </tr>
@@ -63,6 +67,7 @@
     </div>
   </div>
 </div>
+
 @endsection
 
 @push('plugin-scripts')

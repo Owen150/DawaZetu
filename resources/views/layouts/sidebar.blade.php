@@ -61,6 +61,13 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a href="{{ route('categories.index') }}" class="nav-link">
+          <i class="link-icon" data-feather="calendar"></i>
+          <span class="link-title">Categories</span>
+        </a>
+      </li>
+
       <li class="nav-item nav-category"></li>
       {{---
       <li class="nav-item {{ active_class(['ui-components/*']) }}">
