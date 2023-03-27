@@ -8,7 +8,7 @@
   </ol>
 </nav>
 
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="card ">
       <div class="card-body">
 
@@ -27,7 +27,7 @@
 
           <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary me-2">Edit Category</button>
-        </div>
+          </div>
           
         </form>
 

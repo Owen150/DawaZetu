@@ -2,26 +2,46 @@
 
 @push('plugin-styles')
   <link href="{{ asset('assets/plugins/datatables-net-bs5/dataTables.bootstrap5.css') }}" rel="stylesheet" />
+  <style>
+    table {
+        border-top-color: rgb(203 213 225);
+        border-top-width: 2px;
+        border-top-style: solid;
+
+    }
+    .mynav{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .cancel{
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+  </style>
 @endpush
 
 @section('content')
-<nav class="page-breadcrumb">
+<nav class="mynav page-breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#">Categories</a></li>
     <li class="breadcrumb-item active" aria-current="page">Categories Table</li>
   </ol>
+
+  <div class="cancel">
+    <div></div>
+    <a href="{{route('categories.create')}}"><button class="btn btn-success mb-1 mb-md-0">Add Category</button></a>
+  </div>
 </nav>
 
 <div class="row">
+
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
         <h6 class="card-title">Categories Table</h6>
-        <div class="text-right">
-          <a href="{{ route('categories.create') }}"><button class="btn btn-primary mb-3">Add Category</button></a>
-        </div>
         <div class="table-responsive ">
-          <table id="dataTableExample" class="table table-hover">
+          <table id="dataTableExample" class="table table-bordered table-hover text-center mt-3">
             <thead>
               <tr>
                 <th>#</th>
@@ -38,8 +58,8 @@
                 <td>{{ $number }}</td>
                 <?php $number++; ?>
                 <td>{{ $category->category_name }}</td>
-                <div class="row">
-                  <td>
+                <td>
+                <div class="d-flex justify-content-around">
                     <a href="{{ route('categories.edit', $category->id) }}"><button class="btn btn-primary">Edit</button></a><br>
                     <form id='cat'
                      action="{{ route('categories.destroy',$category->id) }}" method="post">
@@ -47,8 +67,8 @@
                         @method('DELETE')
                         <span id="category-delete"><button class="btn btn-danger">Delete</button></span>
                     </form>
-                  </td>
                 </div>
+                </td>
             </tr>
             @endforeach
               

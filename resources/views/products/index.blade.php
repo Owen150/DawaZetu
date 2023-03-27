@@ -2,24 +2,46 @@
 
 @push('plugin-styles')
   <link href="{{ asset('assets/plugins/datatables-net-bs5/dataTables.bootstrap5.css') }}" rel="stylesheet" />
+  <style>
+    table {
+        border-top-color: rgb(203 213 225);
+        border-top-width: 2px;
+        border-top-style: solid;
+
+    }
+    .mynav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cancel{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  </style>
 @endpush
 
 @section('content')
-<nav class="page-breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Products</a></li>
+<nav class="mynav page-breadcrumb">
+  <ol class="breadcrumb" style="flex-none">
+    <li class="breadcrumb-item"><a href="{{ route('products.index') }}">Products</a></li>
     <li class="breadcrumb-item active" aria-current="page">Products Table</li>
   </ol>
+
+  <div class="cancel">
+    <div></div>
+    <a href="{{route('products.create')}}"><button class="btn btn-success mb-1 mb-md-0">Add Product</button></a>
+  </div>
 </nav>
 
 <div class="row">
+
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
         <h6 class="card-title">Products Table</h6>
-        <a href="{{ route('products.create') }}"><button class="btn btn-primary mb-3">Add Product</button></a>
         <div class="table-responsive">
-          <table id="dataTableExample" class="table table-hover text-center">
+          <table id="dataTableExample" class="table table-bordered table-hover text-center mt-3">
             <thead>
               <tr>
                 <th>#</th>
@@ -48,15 +70,17 @@
                     <td>{{ $product->package_size }}</td>
                     <td>{{ $product->package_quantity }}</td>
                     <td>{{ $product->no_of_items_in_box }}</td>
-                    <td>{{ $product->category_id }}</td>
+                    <td>{{ App\Models\Category::where('id','=', $product->category_id)->first()->category_name }}</td>
                     <td>
-                      <a href="{{ route('products.edit', $product->id) }}"><button class="btn btn-primary">Edit</button></a>
+                      <div class="d-flex justify-content-center">
+                        <a href="{{ route('products.edit', $product->id) }}"><button class="btn btn-primary">Edit</button></a>
                         <form id='frm'
                          action="{{ route('products.destroy',$product->id) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <span id="product-delete"><button class="btn btn-danger">Delete</button></span>
                         </form>
+                      </div>
                     </td>
                 </tr>
                 @endforeach

@@ -12,7 +12,7 @@
     <div class="card">
       <div class="card-body">
 
-        <h6 class="card-title">Edit Product</h6>
+        <h3 class="card-title">Edit Product</h3>
 
         <form action="{{ route('products.update', $product->id) }}" method="POST">
             @csrf
@@ -67,7 +67,7 @@
             </div>
           </div>
           
-          <div class="text-center"><button type="submit" class="btn btn-primary me-2">Update Product</button></div>
+          <div class="text-center"><button type="submit" class="btn btn-primary mt-2">Update Product</button></div>
         </form>
 
       </div>
