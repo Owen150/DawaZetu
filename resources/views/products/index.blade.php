@@ -30,7 +30,7 @@
 
   <div class="cancel">
     <div></div>
-    <a href="{{route('products.create')}}"><button class="btn btn-success mb-1 mb-md-0">Add Product</button></a>
+    <a href="{{route('products.create')}}"><button class="btn btn-primary mb-1 mb-md-0">Add Product</button></a>
   </div>
 </nav>
 
@@ -41,7 +41,7 @@
       <div class="card-body">
         <h6 class="card-title">Products Table</h6>
         <div class="table-responsive">
-          <table id="dataTableExample" class="table table-bordered table-hover text-center mt-3">
+          <table id="dataTableExample" class="table table-bordered table-hover mt-3">
             <thead>
               <tr>
                 <th>#</th>

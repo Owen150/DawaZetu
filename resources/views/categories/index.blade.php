@@ -41,7 +41,7 @@
       <div class="card-body">
         <h6 class="card-title">Categories Table</h6>
         <div class="table-responsive ">
-          <table id="dataTableExample" class="table table-bordered table-hover text-center mt-3">
+          <table id="dataTableExample" class="table table-bordered table-hover mt-3">
             <thead>
               <tr>
                 <th>#</th>
