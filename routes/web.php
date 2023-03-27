@@ -27,3 +27,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('products', 'App\Http\Controllers\ProductController');
 
 Route::resource('categories', 'App\Http\Controllers\CategoryController');
+
+Route::resource('profomas', 'App\Http\Controllers\InvoiceProformaController');

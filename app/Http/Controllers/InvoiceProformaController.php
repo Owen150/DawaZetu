@@ -18,7 +18,7 @@ class InvoiceProformaController extends Controller
     public function index()
     {
         $invoiceProforma = InvoiceProforma::all();
-        return view('profoma_invoice.index', compact('invoiceProforma'));
+        return view('profomas.index', compact('invoiceProforma'));
     }
 
     /**
@@ -31,7 +31,7 @@ class InvoiceProformaController extends Controller
         $facilities = Facility::all();
         $financialYears = FinancialYear::all();
         $users = User::all();
-        return view('profoma_invoice.create')->with([
+        return view('profomas.create')->with([
             'facilities' => $facilities,
             'financialYears' => $financialYears,
             'users' => $users,
@@ -57,7 +57,7 @@ class InvoiceProformaController extends Controller
 
         InvoiceProforma::create($request->all());
 
-        return redirect()->route('profoma_invoice.index')
+        return redirect()->route('profomas.index')
             ->with('Success', 'Invoice created successfully');
     }
 
@@ -69,7 +69,7 @@ class InvoiceProformaController extends Controller
      */
     public function show(InvoiceProforma $invoiceProforma)
     {
-        return view('profoma_invoice.show', compact('invoiceProforma'));
+        return view('profomas.show', compact('invoiceProforma'));
     }
 
     /**
@@ -80,7 +80,7 @@ class InvoiceProformaController extends Controller
      */
     public function edit(InvoiceProforma $invoiceProforma)
     {
-        return view('profoma_invoice.edit', compact('invoiceProforma'));
+        return view('profomas.edit', compact('invoiceProforma'));
     }
 
     /**
@@ -95,7 +95,7 @@ class InvoiceProformaController extends Controller
         $request->validate([]);
         $invoiceProforma->update($request->all());
 
-        return redirect()->route('profoma_invoice.index')
+        return redirect()->route('profomas.index')
             ->with('Success', 'Invoice updated successfully');
     }
 
@@ -108,7 +108,7 @@ class InvoiceProformaController extends Controller
     public function destroy(InvoiceProforma $invoiceProforma)
     {
         $invoiceProforma->delete();
-        return redirect()->route('profoma_invoice.index')
+        return redirect()->route('profomas.index')
             ->with('Success', 'Invoice deleted successfully');
     }
 }

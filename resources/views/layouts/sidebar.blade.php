@@ -68,6 +68,13 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a href="{{ route('profomas.index') }}" class="nav-link">
+          <i class="link-icon" data-feather="calendar"></i>
+          <span class="link-title">Profoma Invoice</span>
+        </a>
+      </li>
+
       <li class="nav-item nav-category"></li>
       {{---
       <li class="nav-item {{ active_class(['ui-components/*']) }}">
