@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class InvoiceProforma extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'financial_year_id','facilities_id','total','status','lpo','approved_for_supply',
+        'financial_year_id',
+        'facility_id',
+        'total',
+        'status',
+        'lpo',
+        'approved_for_supply',
     ];
 }

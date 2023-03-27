@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('invoice_proformas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('financial_year_id');
-            $table->unsignedBigInteger('facilities_id');
+            $table->unsignedBigInteger('facility_id');
             $table->integer('total');
             $table->string('status');
             $table->string('lpo');
             $table->boolean('approved_for_supply');
             $table->foreign('financial_year_id')->references('id')->on('financial_years');
-            $table->foreign('facilities_id')->references('id')->on('facilities');
+            $table->foreign('facility_id')->references('id')->on('facilities');
             $table->timestamps();
         });
     }

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('financial_years', function (Blueprint $table) {
             $table->id();
+            $table->string('financial_year_name');
             $table->timestamps();
         });
     }

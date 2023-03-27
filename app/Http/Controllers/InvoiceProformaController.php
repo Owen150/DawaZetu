@@ -48,7 +48,7 @@ class InvoiceProformaController extends Controller
     {
         $request->validate([
             'financial_year_id' => 'required',
-            'facilities_id' => 'required',
+            'facility_id' => 'required',
             'total' => 'required',
             'status' => 'required',
             'lpo' => 'required',
