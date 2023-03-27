@@ -25,12 +25,12 @@
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb" style="flex-none">
     <li class="breadcrumb-item"><a href="{{ route('profomas.index') }}">Proforma Invoices</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Invoices Table</li>
+    <li class="breadcrumb-item active" aria-current="page">Proforma Invoices Table</li>
   </ol>
 
   <div class="cancel">
     <div></div>
-    <a href="{{route('profomas.create')}}"><button class="btn btn-primary mb-1 mb-md-0">Generate Invoice</button></a>
+    <a href="{{route('profomas.create')}}"><button class="btn btn-success mb-1 mb-md-0">Generate Invoice</button></a>
   </div>
 </nav>
 
@@ -99,7 +99,7 @@
   <script src="{{ asset('assets/js/data-table.js') }}"></script>
   <script defer>
     
-    var del = document.getElementById('product-delete');
+    var del = document.getElementById('profoma-delete');
     var frm = document.getElementById('frm');
     del.addEventListener("click",function (e) {
         frm.submit();
