@@ -67,16 +67,14 @@
                     <td>{{ $invoiceProforma->status }}</td>
                     <td>{{ $invoiceProforma->lpo }}</td>
                     <td>{{ $invoiceProforma->approved_for_supply }}</td>
-                    <td>
-                      <div class="d-flex justify-content-center">
-                        <a href="{{ route('profomas.edit', $invoiceProforma->id) }}"><button class="btn btn-primary">Edit</button></a>
+                    <td style="display: flex; gap: 10px">
+                        <a href="{{ route('profomas.edit', $invoiceProforma->id) }}"><span class="text-success">Edit</span></a>
                         <form id='frm'
                          action="{{ route('profomas.destroy', $invoiceProforma->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <span id="profoma-delete"><button class="btn btn-danger">Delete</button></span>
+                            <span id="profoma-delete" class="text-danger">Delete</span>
                         </form>
-                      </div>
                     </td>
                 </tr>
                 @endforeach

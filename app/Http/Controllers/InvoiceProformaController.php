@@ -78,9 +78,17 @@ class InvoiceProformaController extends Controller
      * @param  \App\Models\InvoiceProforma  $invoiceProforma
      * @return \Illuminate\Http\Response
      */
-    public function edit(InvoiceProforma $invoiceProforma)
+    public function edit($invoiceProforma)
     {
-        return view('profomas.edit', compact('invoiceProforma'));
+        $facilities = Facility::all();
+        $financialYears = FinancialYear::all();
+
+        $invoiceProforma = InvoiceProforma::find($invoiceProforma);
+        return view('profomas.edit')->with([
+            'facilities' => $facilities,
+            'financial_years' => $financialYears,
+            'invoice_proforma' => $invoiceProforma,
+        ]);
     }
 
     /**
@@ -90,9 +98,11 @@ class InvoiceProformaController extends Controller
      * @param  \App\Models\InvoiceProforma  $invoiceProforma
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InvoiceProforma $invoiceProforma)
+    public function update(Request $request, $invoiceProforma)
     {
+
         $request->validate([]);
+        $invoiceProforma = InvoiceProforma::find($invoiceProforma);
         $invoiceProforma->update($request->all());
 
         return redirect()->route('profomas.index')
@@ -105,8 +115,9 @@ class InvoiceProformaController extends Controller
      * @param  \App\Models\InvoiceProforma  $invoiceProforma
      * @return \Illuminate\Http\Response
      */
-    public function destroy(InvoiceProforma $invoiceProforma)
+    public function destroy($invoiceProforma)
     {
+        $invoiceProforma = InvoiceProforma::find($invoiceProforma);
         $invoiceProforma->delete();
         return redirect()->route('profomas.index')
             ->with('Success', 'Invoice deleted successfully');

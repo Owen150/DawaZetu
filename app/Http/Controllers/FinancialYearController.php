@@ -14,7 +14,8 @@ class FinancialYearController extends Controller
      */
     public function index()
     {
-        //
+        $financialYear = FinancialYear::all();
+        return view('products.index', compact('financialYear'));
     }
 
     /**

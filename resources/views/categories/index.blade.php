@@ -58,16 +58,14 @@
                 <td>{{ $number }}</td>
                 <?php $number++; ?>
                 <td>{{ $category->category_name }}</td>
-                <td>
-                <div class="d-flex justify-content-around">
-                    <a href="{{ route('categories.edit', $category->id) }}"><button class="btn btn-primary">Edit</button></a><br>
+                <td style="display: flex; gap: 10px">
+                    <a href="{{ route('categories.edit', $category->id) }}"><span class="text-success">Edit</span></a><br>
                     <form id='cat'
                      action="{{ route('categories.destroy',$category->id) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <span id="category-delete"><button class="btn btn-danger">Delete</button></span>
+                        <span id="category-delete" class="text-danger">Delete</span>
                     </form>
-                </div>
                 </td>
             </tr>
             @endforeach

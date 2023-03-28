@@ -71,16 +71,14 @@
                     <td>{{ $product->package_quantity }}</td>
                     <td>{{ $product->no_of_items_in_box }}</td>
                     <td>{{ App\Models\Category::where('id','=', $product->category_id)->first()->category_name }}</td>
-                    <td>
-                      <div class="d-flex justify-content-center">
-                        <a href="{{ route('products.edit', $product->id) }}"><button class="btn btn-primary">Edit</button></a>
+                    <td style="display: flex; gap: 10px">
+                        <a href="{{ route('products.edit', $product->id) }}"><span class="text-success">Edit</span></a>
                         <form id='frm'
                          action="{{ route('products.destroy',$product->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <span id="product-delete"><button class="btn btn-danger">Delete</button></span>
+                            <span id="product-delete" class="text-danger">Delete</span>
                         </form>
-                      </div>
                     </td>
                 </tr>
                 @endforeach
