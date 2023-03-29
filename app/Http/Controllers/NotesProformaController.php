@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\NotesProfoma;
+use App\Models\User;
+use App\Models\InvoiceProforma;
 use Illuminate\Http\Request;
 
 class NotesProformaController extends Controller
@@ -14,7 +16,8 @@ class NotesProformaController extends Controller
      */
     public function index()
     {
-        //
+        $notesProfoma = NotesProfoma::all();
+        return view('notes.index', compact('notesProfoma'));
     }
 
     /**
@@ -24,7 +27,12 @@ class NotesProformaController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        $invoiceProforma = InvoiceProforma::all();
+        return view('notes.create')->with([
+            'users' => $users,
+            'invoiceProforma' => $invoiceProforma,
+        ]);
     }
 
     /**
@@ -35,7 +43,16 @@ class NotesProformaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id' => 'required',
+            'invoice_proforma_id' => 'required',
+            'notes' => 'required',
+        ]);
+
+        NotesProfoma::create($request->all());
+
+        return redirect()->route('notes.index')
+            ->with('Success', 'Note Proforma created successfully');
     }
 
     /**
@@ -46,7 +63,7 @@ class NotesProformaController extends Controller
      */
     public function show(NotesProfoma $notesProfoma)
     {
-        //
+        return view('notes.show', compact('notesProfoma'));
     }
 
     /**
@@ -55,9 +72,16 @@ class NotesProformaController extends Controller
      * @param  \App\Models\NotesProfoma  $notesProfoma
      * @return \Illuminate\Http\Response
      */
-    public function edit(NotesProfoma $notesProfoma)
+    public function edit($notesProfoma)
     {
-        //
+        $users = User::all();
+        $invoiceProforma = InvoiceProforma::all();
+        $notesProfoma = NotesProfoma::find($notesProfoma);
+        return view('notes.edit')->with([
+            'users' => $users,
+            'invoiceProforma' => $invoiceProforma,
+            'notesProfoma' => $notesProfoma,
+        ]);
     }
 
     /**
@@ -67,9 +91,14 @@ class NotesProformaController extends Controller
      * @param  \App\Models\NotesProfoma  $notesProfoma
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NotesProfoma $notesProfoma)
+    public function update(Request $request, $notesProfoma)
     {
-        //
+        $request->validate([]);
+        $notesProfoma = NotesProfoma::find($notesProfoma);
+        $notesProfoma->update($request->all());
+
+        return redirect()->route('notes.index')
+            ->with('Success', 'Note Proforma updated successfully');
     }
 
     /**
@@ -78,8 +107,11 @@ class NotesProformaController extends Controller
      * @param  \App\Models\NotesProfoma  $notesProfoma
      * @return \Illuminate\Http\Response
      */
-    public function destroy(NotesProfoma $notesProfoma)
+    public function destroy($notesProfoma)
     {
-        //
+        $notesProfoma = NotesProfoma::find($notesProfoma);
+        $notesProfoma->delete();
+        return redirect()->route('notes.index')
+        ->with('Success', 'Invoice deleted successfully');
     }
 }

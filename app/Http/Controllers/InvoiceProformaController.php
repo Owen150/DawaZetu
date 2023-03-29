@@ -82,7 +82,6 @@ class InvoiceProformaController extends Controller
     {
         $facilities = Facility::all();
         $financialYears = FinancialYear::all();
-
         $invoiceProforma = InvoiceProforma::find($invoiceProforma);
         return view('profomas.edit')->with([
             'facilities' => $facilities,
