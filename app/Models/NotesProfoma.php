@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class NotesProfoma extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'invoice_proforma_id',
+        'notes',
+    ];
 }
