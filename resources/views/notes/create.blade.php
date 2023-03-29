@@ -6,7 +6,7 @@
     <title>Champion League Goalscorer</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.css" rel="stylesheet">  
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.js"></script> 
   </head>
   <body>
@@ -30,41 +30,34 @@
                         </div>
 
                         <div class="modal-body">
-                            <div class="row mb-3">
+                            <div class="row">
                                 <label for="Name" class="col-sm-3">Product Name</label>
                                 <div class="col-sm-9">
-                                  <input type="text" class="form-control" name="name" id="name" value="" placeholder="Name">
+                                  <input type="text" class="form-control" name="name" id="name" value="" placeholder="Product Name">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="Club" class="col-sm-3">Club</label>
+                                <label for="Club" class="col-sm-3">Manufacturers</label>
                                 <div class="col-sm-9">
                                   <input type="text" class="form-control" name="club" id="club" value="" placeholder="Club">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="Country" class="col-sm-3">Country</label>
+                                <label for="Country" class="col-sm-3">Strength</label>
                                 <div class="col-sm-9">
                                   <input type="text" class="form-control" name="country" id="country" value="" placeholder="Country">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="Goal Score" class="col-sm-3">Goal Score</label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control" name="score" id="score" value="" placeholder="Score">
                                 </div>
                             </div>
 
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button  class="btn btn-success" id="ajaxSubmit">Save changes</button>
-                            </div>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close Dialogue</button>
+                            <button  class="btn btn-success" id="ajaxSubmit">Save Changes</button>
                         </div>
+
                     </div>
                 </div>
             </div>
