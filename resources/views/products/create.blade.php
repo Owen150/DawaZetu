@@ -54,7 +54,7 @@
 
           <div class="col-md-6 mb-3">
             <label for="exampleInputUsername2">Manufacturers</label>
-            <input type="text" name="manufacturers" class="form-control" placeholder="Manufacturer" required>
+            <input type="text" name="manufacturers" class="form-control" placeholder="Manufacturer Name" required>
           </div>
 
           <div class="col-md-6 mb-3">
@@ -79,13 +79,13 @@
 
           <div class="col-md-6 mb-3">
             <label for="exampleInputUsername2">Number of Items in Box</label>
-            <input type="number" name="no_of_items_in_box" class="form-control" placeholder="Items in Box" required>
+            <input type="number" name="no_of_items_in_box" class="form-control" placeholder="Quantity in Box" required>
           </div>
 
         </div>
 
         <div>
-          <button type="submit" class="btn btn-success mt-3">Create Product</button>
+          <button type="submit" class="btn btn-success mt-3">Add Product</button>
         </div>
         </form>
 
