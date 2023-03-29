@@ -19,16 +19,18 @@
             @method('PUT')
 
           <div class="row mb-3">
-            <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Category Name</label>
-            <div class="col-sm-9">
-              <input type="text" name="category_name" value="{{ $category->category_name }}" class="form-control" id="categoryName" placeholder="">
-            </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="form-group">
+                      <label>Category Name</label>
+                      <input type="text" name="category_name" value="{{ $category->category_name }}" class="form-control mt-2" id="categoryName" placeholder="">
+                  </div>
+              </div>
           </div>
 
           <div class="col-xs-12 col-sm-12 col-md-12">
-            <button type="submit" class="btn btn-primary me-2">Edit Category</button>
+            <button type="submit" class="btn btn-success me-2">Edit Category</button>
           </div>
-          
+    
         </form>
 
       </div>

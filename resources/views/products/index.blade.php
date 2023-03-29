@@ -30,7 +30,7 @@
 
   <div class="cancel">
     <div></div>
-    <a href="{{route('products.create')}}"><button class="btn btn-primary mb-1 mb-md-0">Add Product</button></a>
+    <a href="{{route('products.create')}}"><button class="btn btn-success mb-1 mb-md-0">Add Product</button></a>
   </div>
 </nav>
 

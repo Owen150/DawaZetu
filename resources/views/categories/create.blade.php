@@ -43,7 +43,7 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <button type="submit" class="btn btn-primary me-2">Add Category</button>
+            <button type="submit" class="btn btn-success me-2">Add Category</button>
         </div>
 
 @endsection

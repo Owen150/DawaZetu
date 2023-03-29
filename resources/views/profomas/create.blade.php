@@ -81,7 +81,7 @@
         </div>
 
         <div>
-          <button type="submit" class="btn btn-primary mt-3">Create Proforma Invoice</button>
+          <button type="submit" class="btn btn-success mt-3">Create Proforma Invoice</button>
         </div>
         </form>
 

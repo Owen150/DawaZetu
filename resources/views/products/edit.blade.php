@@ -51,7 +51,7 @@
           </div>
           
           <div>
-              <button type="submit" class="btn btn-primary mt-2">Update Product</button>
+              <button type="submit" class="btn btn-success mt-2">Update Product</button>
           </div>
         </form>
 
