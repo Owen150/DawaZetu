@@ -1,11 +1,29 @@
 @extends('layouts.app')
 
+@push('plugin-styles')
+<style>
+  .mynav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cancel{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+</style>
+@endpush
+
 @section('content')
-<nav class="page-breadcrumb">
-  <ol class="breadcrumb">
+<nav class="mynav page-breadcrumb">
+  <ol class="breadcrumb" style="flex-none">
     <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">Categories</a></li>
     <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
   </ol>
+  
+  <div class="cancel">
+    <div></div>
+    <a href="{{route('categories.index')}}"><button class="btn btn-danger mb-1 mb-md-0">Cancel</button></a>
+  </div>
 </nav>
 
   <div class="col-md-12">
