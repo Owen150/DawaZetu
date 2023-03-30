@@ -25,6 +25,73 @@
   </div>
 </div>
 
+<div class="example">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
+    Launch demo modal
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Out of Stock Medicine</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <table id="dataTableExample" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Medicine Name</th>
+                  <th>Manufacturer Name</th>
+                  <th>Stock</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Paracetamol</td>
+                  <td>Beta Healthcare</td>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>NobleUI Angular</td>
+                  <td>Medi</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Mara moja</td>
+                  <td>Medi</td>
+                  <td>223</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Panadol</td>
+                  <td>Sawa</td>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>NobleUI Laravel</td>
+                  <td>Poa</td>
+                  <td>400</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="col-12 col-xl-12 stretch-card">
     <div class="row flex-grow-1">
@@ -429,3 +496,72 @@
 @push('custom-scripts')
   <script src="{{ asset('assets/js/dashboard.js') }}"></script>
 @endpush
+
+@push('plugin-scripts')
+  <script>
+    var varyingModal = document.getElementById('varyingModal')
+    varyingModal.addEventListener('show.bs.modal', function (event) {
+      // Button that triggered the modal
+      var button = event.relatedTarget
+      // Extract info from data-bs-* attributes
+      var recipient = button.getAttribute('data-bs-whatever')
+      // If necessary, you could initiate an AJAX request here
+      // and then do the updating in a callback.
+      //
+      // Update the modal's content.
+      var modalTitle = varyingModal.querySelector('.modal-title')
+      var modalBodyInput = varyingModal.querySelector('.modal-body input')
+
+      modalTitle.textContent = 'New message to ' + recipient
+      modalBodyInput.value = recipient
+    })
+  </script>
+  <script src="{{ asset('assets/plugins/prismjs/prism.js') }}"></script>
+  <script src="{{ asset('assets/plugins/clipboard/clipboard.min.js') }}"></script>
+@endpush
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous">
+    </script>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('#ajaxSubmit').click(function(e){
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+            jQuery.ajax({
+                url: "{{ url('/chempionleague') }}",
+                method: 'post',
+                data: {
+                    name: jQuery('#name').val(),
+                    club: jQuery('#club').val(),
+                    country: jQuery('#country').val(),
+                    score: jQuery('#score').val(),
+                },
+                success: function(result){
+                    if(result.errors)
+                    {
+                        jQuery('.alert-danger').html('');
+
+                        jQuery.each(result.errors, function(key, value){
+                            jQuery('.alert-danger').show();
+                            jQuery('.alert-danger').append('<li>'+value+'</li>');
+                        });
+                    }
+                    else
+                    {
+                        jQuery('.alert-danger').hide();
+                        $('#open').hide();
+                        $('#myModal').modal('hide');
+                    }
+                }});
+            });
+            });
+    </script>

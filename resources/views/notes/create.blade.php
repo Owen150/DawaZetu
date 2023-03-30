@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="_token" content="{{csrf_token()}}" />
-    <title>Champion League Goalscorer</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.css" rel="stylesheet">  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script> 
@@ -39,14 +38,42 @@
                             <div class="row mb-3">
                                 <label for="Club" class="col-sm-3">Manufacturers</label>
                                 <div class="col-sm-9">
-                                  <input type="text" class="form-control" name="club" id="club" value="" placeholder="Club">
+                                  <input type="text" class="form-control" name="club" id="club" value="" placeholder="Manufacturers">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="Country" class="col-sm-3">Strength</label>
                                 <div class="col-sm-9">
-                                  <input type="text" class="form-control" name="country" id="country" value="" placeholder="Country">
+                                  <input type="number" class="form-control" name="country" id="country" value="" placeholder="Strength">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="Country" class="col-sm-3">Unit of Measure</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="country" id="country" value="" placeholder="Unit of Measure">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="Country" class="col-sm-3">Package Size</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="country" id="country" value="" placeholder="Package Size">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="Country" class="col-sm-3">Package Quantity</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="country" id="country" value="" placeholder="Package Quantity">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="Country" class="col-sm-3">Items in Box</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="country" id="country" value="" placeholder="Items in Box">
                                 </div>
                             </div>
 
