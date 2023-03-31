@@ -26,12 +26,9 @@
 </div>
 
 <div class="example">
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
-    Launch demo modal
-  </button>
+  
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -523,45 +520,51 @@
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                 crossorigin="anonymous">
-    </script>
-    
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script>
-        jQuery(document).ready(function(){
-            jQuery('#ajaxSubmit').click(function(e){
-            e.preventDefault();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                }
-            });
-            jQuery.ajax({
-                url: "{{ url('/chempionleague') }}",
-                method: 'post',
-                data: {
-                    name: jQuery('#name').val(),
-                    club: jQuery('#club').val(),
-                    country: jQuery('#country').val(),
-                    score: jQuery('#score').val(),
-                },
-                success: function(result){
-                    if(result.errors)
-                    {
-                        jQuery('.alert-danger').html('');
+</script>
 
-                        jQuery.each(result.errors, function(key, value){
-                            jQuery('.alert-danger').show();
-                            jQuery('.alert-danger').append('<li>'+value+'</li>');
-                        });
-                    }
-                    else
-                    {
-                        jQuery('.alert-danger').hide();
-                        $('#open').hide();
-                        $('#myModal').modal('hide');
-                    }
-                }});
-            });
-            });
-    </script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    jQuery(document).ready(function(){
+        jQuery('#ajaxSubmit').click(function(e){
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
+        jQuery.ajax({
+            url: "{{ url('/chempionleague') }}",
+            method: 'post',
+            data: {
+                name: jQuery('#name').val(),
+                club: jQuery('#club').val(),
+                country: jQuery('#country').val(),
+                score: jQuery('#score').val(),
+            },
+            success: function(result){
+                if(result.errors)
+                {
+                    jQuery('.alert-danger').html('');
+
+                    jQuery.each(result.errors, function(key, value){
+                        jQuery('.alert-danger').show();
+                        jQuery('.alert-danger').append('<li>'+value+'</li>');
+                    });
+                }
+                else
+                {
+                    jQuery('.alert-danger').hide();
+                    $('#open').hide();
+                    $('#myModal').modal('hide');
+                }
+            }});
+        });
+        });
+</script>
+
+<script type="text/javascript">
+  $(window).on('load', function() {
+      $('#myModal').modal('show');
+  });
+</script>
