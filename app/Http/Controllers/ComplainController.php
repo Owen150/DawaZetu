@@ -16,7 +16,7 @@ class ComplainController extends Controller
      */
     public function index()
     {
-        $complain = Complain::all();
+        $complain = Complain::orderBy('created_at', 'desc')->get();
         return view('complains.index', compact('complain'));
     }
 

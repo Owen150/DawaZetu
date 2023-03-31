@@ -70,12 +70,12 @@
                     <td>{{ $complain->type }}</td>
                     <td>{{ $complain->note }}</td>
                     <td style="display: flex; gap: 10px">
-                        <a href="{{ route('notes.edit', $complain->id) }}"><span class="text-success">Edit</span></a>
+                        <a href="{{ route('complains.edit', $complain->id) }}"><span class="text-success">Edit</span></a>
                         <form id='frm'
-                         action="{{ route('notes.destroy', $complain->id) }}" method="post">
+                         action="{{ route('complains.destroy', $complain->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <span id="profoma-delete" class="text-danger">Delete</span>
+                            <span id="complain-delete" class="text-danger">Delete</span>
                         </form>
                     </td>
                 </tr>
@@ -99,7 +99,7 @@
   <script src="{{ asset('assets/js/data-table.js') }}"></script>
   <script defer>
     
-    var del = document.getElementById('profoma-delete');
+    var del = document.getElementById('complain-delete');
     var frm = document.getElementById('frm');
     del.addEventListener("click",function (e) {
         frm.submit();

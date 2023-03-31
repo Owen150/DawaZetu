@@ -17,7 +17,7 @@ class InvoiceProformaController extends Controller
      */
     public function index()
     {
-        $invoiceProforma = InvoiceProforma::all();
+        $invoiceProforma = InvoiceProforma::orderBy('created_at', 'desc')->get();
         return view('profomas.index', compact('invoiceProforma'));
     }
 

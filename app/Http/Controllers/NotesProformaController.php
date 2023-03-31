@@ -16,7 +16,7 @@ class NotesProformaController extends Controller
      */
     public function index()
     {
-        $notesProfoma = NotesProfoma::all();
+        $notesProfoma = NotesProfoma::orderBy('created_at', 'desc')->get();
         return view('notes.index', compact('notesProfoma'));
     }
 
