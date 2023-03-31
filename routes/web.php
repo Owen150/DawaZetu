@@ -31,3 +31,5 @@ Route::resource('categories', 'App\Http\Controllers\CategoryController');
 Route::resource('profomas', 'App\Http\Controllers\InvoiceProformaController');
 
 Route::resource('notes', 'App\Http\Controllers\NotesProformaController');
+
+Route::resource('complains', 'App\Http\Controllers\ComplainController');
