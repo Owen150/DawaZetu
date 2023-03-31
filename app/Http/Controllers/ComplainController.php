@@ -81,6 +81,7 @@ class ComplainController extends Controller
         return view('complains.edit')->with([
             'users' => $users,
             'facilities' => $facilities,
+            'complains' => $complain,
         ]);
     }
     /**

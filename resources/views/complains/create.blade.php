@@ -38,7 +38,7 @@
 
           <div class="col-md-6 mb-3">
             <div class="form-group">
-              <label for="exampleInputUsername2">User Name</label>
+              <label for="exampleInputUsername2">Patient Name</label>
               <select class="form-select" name="user_id" id="users">
                   @foreach ($users as $users)
                   <option value="{{ $users->id }}">{{ $users->name }}</option>
