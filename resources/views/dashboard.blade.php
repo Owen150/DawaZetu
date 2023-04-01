@@ -43,6 +43,9 @@
                   <th>#</th>
                   <th>Medicine Name</th>
                   <th>Manufacturer Name</th>
+                  <th>Items in Box</th>
+                  <th>Quantity</th>
+                  <th>Size</th>
                   <th>Stock</th>
                 </tr>
               </thead>
@@ -50,32 +53,56 @@
                 <tr>
                   <td>1</td>
                   <td>Paracetamol</td>
-                  <td>Beta Healthcare</td>
+                  <td>Beta</td>
                   <td>100</td>
+                  <td>50</td>
+                  <td>100</td>
+                  <td>50</td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>NobleUI Angular</td>
-                  <td>Medi</td>
-                  <td>123</td>
+                  <td>Paracetamol</td>
+                  <td>Beta</td>
+                  <td>100</td>
+                  <td>50</td>
+                  <td>100</td>
+                  <td>50</td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Mara moja</td>
-                  <td>Medi</td>
-                  <td>223</td>
+                  <td>Paracetamol</td>
+                  <td>Beta</td>
+                  <td>100</td>
+                  <td>50</td>
+                  <td>100</td>
+                  <td>50</td>
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td>Panadol</td>
-                  <td>Sawa</td>
+                  <td>Paracetamol</td>
+                  <td>Beta</td>
                   <td>100</td>
+                  <td>50</td>
+                  <td>100</td>
+                  <td>50</td>
                 </tr>
                 <tr>
                   <td>5</td>
-                  <td>NobleUI Laravel</td>
-                  <td>Poa</td>
-                  <td>400</td>
+                  <td>Paracetamol</td>
+                  <td>Beta</td>
+                  <td>100</td>
+                  <td>50</td>
+                  <td>100</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Paracetamol</td>
+                  <td>Beta</td>
+                  <td>100</td>
+                  <td>50</td>
+                  <td>100</td>
+                  <td>50</td>
                 </tr>
               </tbody>
             </table>

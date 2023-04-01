@@ -44,11 +44,15 @@ class ComplainController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'user_id' => 'required',
-            'facility_id' => 'required',
+            'id_number' => 'required',
+            'phone_number' => 'required',
             'status' => 'required',
             'type' => 'required',
             'note' => 'required',
+            'subcounty' => 'required',
+            'ward' => 'required',
+            'facility_id' => 'required',
+
         ]);
 
         Complain::create($request->all());

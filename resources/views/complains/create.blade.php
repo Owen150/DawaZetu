@@ -35,28 +35,15 @@
         @csrf
 
         <div class="row">
-
-          <div class="col-md-6 mb-3">
-            <div class="form-group">
-              <label for="exampleInputUsername2">Patient Name</label>
-              <select class="form-select" name="user_id" id="users">
-                  @foreach ($users as $users)
-                  <option value="{{ $users->id }}">{{ $users->name }}</option>
-                  @endforeach
-              </select>
+            <div class="col-md-6 mb-3">
+                <label for="exampleInputUsername2">ID Number</label>
+                <input type="text" name="id_number" class="form-control" placeholder="ID Number" required>
             </div>
-          </div>
 
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="exampleInputUsername2">Facility Name</label>
-              <select class="form-select" name="facility_id" id="facilities">
-                  @foreach ($facilities as $facility)
-                  <option value="{{ $facility->id }}">{{ $facility->facility_name }}</option>
-                  @endforeach
-              </select>
+            <div class="col-md-6 mb-3">
+                <label for="exampleInputUsername2">Phone Number</label>
+                <input type="text" name="phone_number" class="form-control" placeholder="Phone Number" required>
             </div>
-          </div>
 
           <div class="col-md-6 mb-3">
             <label for="exampleInputUsername2">Status</label>
@@ -73,10 +60,31 @@
             <input type="text" name="note" class="form-control" placeholder="Note" required>
           </div>
 
+          <div class="col-md-6 mb-3">
+            <label for="exampleInputUsername2">Sub-County</label>
+            <input type="text" name="subcounty" class="form-control" placeholder="Sub-county" required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="exampleInputUsername2">Ward</label>
+            <input type="text" name="ward" class="form-control" placeholder="Ward" required>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="exampleInputUsername2">Facility Name</label>
+              <select class="form-select" name="facility_id" id="facilities">
+                  @foreach ($facilities as $facility)
+                  <option value="{{ $facility->id }}">{{ $facility->facility_name }}</option>
+                  @endforeach
+              </select>
+            </div>
+          </div>
+
         </div>
 
         <div>
-          <button type="submit" class="btn btn-success mt-3">Add Invoice</button>
+          <button type="submit" class="btn btn-success mt-3">Add Complain</button>
         </div>
         </form>
 

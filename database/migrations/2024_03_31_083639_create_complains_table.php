@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('complains', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('facility_id');
+            $table->integer('id_number');
+            $table->integer('phone_number');
             $table->string('status');
             $table->string('type');
             $table->string('note');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('subcounty');
+            $table->string('ward');
+            $table->unsignedBigInteger('facility_id');
             $table->foreign('facility_id')->references('id')->on('facilities');
             $table->timestamps();
         });

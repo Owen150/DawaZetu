@@ -45,13 +45,14 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Patient Name</th>
-                <th>Facility Name</th>
+                <th>ID Number</th>
                 <th>Phone Number</th>
-                <th>Email</th>
                 <th>Status</th>
                 <th>Type</th>
                 <th>Note</th>
+                <th>Sub-County</th>
+                <th>Ward</th>
+                <th>Facility</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -62,13 +63,14 @@
                 <tr>
                     <td>{{ $number }}</td>
                     <?php $number++; ?>
-                    <td>{{ App\Models\User::where('id','=', $complain->user_id)->first()->name }}</td>
-                    <td>{{ App\Models\Facility::where('id','=', $complain->facility_id)->first()->facility_name }}</td>
-                    <td>{{ App\Models\User::where('id','=', $complain->user_id)->first()->phone_number }}</td>
-                    <td>{{ App\Models\User::where('id','=', $complain->user_id)->first()->email }}</td>
+                    <td>{{ $complain->id_number }}</td>
+                    <td>{{ $complain->phone_number }}</td>
                     <td>{{ $complain->status }}</td>
                     <td>{{ $complain->type }}</td>
                     <td>{{ $complain->note }}</td>
+                    <td>{{ $complain->subcounty }}</td>
+                    <td>{{ $complain->ward }}</td>
+                    <td>{{ App\Models\Facility::where('id','=', $complain->facility_id)->first()->facility_name }}</td>
                     <td style="display: flex; gap: 10px">
                         <a href="{{ route('complains.edit', $complain->id) }}"><span class="text-success">Edit</span></a>
                         <form id='frm'

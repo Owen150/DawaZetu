@@ -10,10 +10,13 @@ class Complain extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'facility_id',
+        'id_number',
+        'phone_number',
         'status',
         'type',
         'note',
+        'subcounty',
+        'ward',
+        'facility_id',
     ];
 }
