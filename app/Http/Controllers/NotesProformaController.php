@@ -52,7 +52,7 @@ class NotesProformaController extends Controller
         NotesProfoma::create($request->all());
 
         return redirect()->route('notes.index')
-            ->with('Success', 'Note Proforma created successfully');
+            ->with('success', 'Note Proforma Created Successfully');
     }
 
     /**
@@ -98,7 +98,7 @@ class NotesProformaController extends Controller
         $notesProfoma->update($request->all());
 
         return redirect()->route('notes.index')
-            ->with('Success', 'Note Proforma updated successfully');
+            ->with('success', 'Note Proforma Updated Successfully');
     }
 
     /**
@@ -112,6 +112,6 @@ class NotesProformaController extends Controller
         $notesProfoma = NotesProfoma::find($notesProfoma);
         $notesProfoma->delete();
         return redirect()->route('notes.index')
-        ->with('Success', 'Invoice deleted successfully');
+        ->with('success', 'Invoice Deleted Successfully');
     }
 }
