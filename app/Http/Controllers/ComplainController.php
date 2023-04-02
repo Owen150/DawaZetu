@@ -57,7 +57,7 @@ class ComplainController extends Controller
 
         Complain::create($request->all());
         return redirect()->route('complains.index')
-            ->with('success', 'Note Proforma created successfully');
+            ->with('success', 'Complain Created Successfully');
     }
 
     /**
@@ -102,7 +102,7 @@ class ComplainController extends Controller
         $complain->update($request->all());
 
         return redirect()->route('complains.index')
-            ->with('success', 'Complain updated successfully');
+            ->with('success', 'Complain Updated Successfully');
     }
 
     /**
@@ -116,6 +116,6 @@ class ComplainController extends Controller
         $complain = Complain::find($complain);
         $complain->delete();
         return redirect()->route('complains.index')
-            ->with('success', 'Complain deleted successfully');
+            ->with('success', 'Complain Deleted Successfully');
     }
 }
