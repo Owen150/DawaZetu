@@ -41,7 +41,12 @@
       <div class="card-body">
         <h6 class="card-title">Categories Table</h6>
         <div class="table-responsive ">
-          <table id="dataTableExample" class="table table-bordered table-hover mt-3">
+
+          @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+          @endif
+
+          <table class="table table-bordered table-hover mt-3" id="dataTableExample">
             <thead>
               <tr>
                 <th>#</th>
