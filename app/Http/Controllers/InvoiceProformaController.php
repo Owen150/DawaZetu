@@ -58,7 +58,7 @@ class InvoiceProformaController extends Controller
         InvoiceProforma::create($request->all());
 
         return redirect()->route('profomas.index')
-            ->with('Success', 'Invoice created successfully');
+            ->with('success', 'Invoice Created Successfully');
     }
 
     /**
@@ -105,7 +105,7 @@ class InvoiceProformaController extends Controller
         $invoiceProforma->update($request->all());
 
         return redirect()->route('profomas.index')
-            ->with('Success', 'Invoice updated successfully');
+            ->with('success', 'Invoice Updated Successfully');
     }
 
     /**
@@ -119,6 +119,6 @@ class InvoiceProformaController extends Controller
         $invoiceProforma = InvoiceProforma::find($invoiceProforma);
         $invoiceProforma->delete();
         return redirect()->route('profomas.index')
-            ->with('Success', 'Invoice deleted successfully');
+            ->with('success', 'Invoice Deleted Successfully');
     }
 }
