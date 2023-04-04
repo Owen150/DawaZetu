@@ -34,9 +34,8 @@
   </div>
 </nav>
 
-<div class="mb-4"> 
-  <input type="text" id="search-criteria"/>
-  <input type="button" id="search" value="search" onClick="tes();"/> 
+<div class="mb-4">
+  <input type="text" name="search" id="search" class="form-control">
 </div>
 
 <div class="row">
@@ -86,8 +85,32 @@
     </div>
   </div>
 </div>
-
 @endsection
+
+<script>
+  $(document).ready(function(){
+    $('#search').keyup(function(){
+      search_table($(this).val());
+    });
+
+    function search_table(value){
+      $('#dataTableExample tr').each(function(){
+          var found = 'false';
+          $(this).each(function(){
+              if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0){
+                found = 'true';
+              }
+          });
+          if(found == 'true'){
+            $(this).show();
+          }
+          else{
+            $(this).hide();
+          }
+      }); 
+    }
+  });
+</script>
 
 @push('plugin-scripts')
   <script src="{{ asset('assets/plugins/datatables-net/jquery.dataTables.js') }}"></script>
