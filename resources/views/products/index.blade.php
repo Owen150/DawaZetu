@@ -41,10 +41,12 @@
       <div class="card-body">
         <h6 class="card-title">Products Table</h6>
         <div class="table-responsive">
-          
+
           @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
           @endif
+
+          
             
           <table class="table table-bordered table-hover mt-3" id="dataTableExample" >
             <thead>

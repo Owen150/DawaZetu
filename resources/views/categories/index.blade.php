@@ -34,8 +34,12 @@
   </div>
 </nav>
 
-<div class="row">
+<div class="mb-4"> 
+  <input type="text" id="search-criteria"/>
+  <input type="button" id="search" value="search" onClick="tes();"/> 
+</div>
 
+<div class="row">
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
@@ -82,6 +86,7 @@
     </div>
   </div>
 </div>
+
 @endsection
 
 @push('plugin-scripts')
