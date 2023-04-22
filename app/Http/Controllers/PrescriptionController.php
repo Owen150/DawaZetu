@@ -67,7 +67,6 @@ class PrescriptionController extends Controller
      */
     public function show($id)
     {
-        $products
         $prescription = Prescription::find($id);
         return view('prescription.show')->with([
             'prescription' => $prescription
