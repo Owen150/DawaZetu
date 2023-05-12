@@ -1,20 +1,9 @@
-<form action="{{ route('store_ward') }}" method="POST">
+<form action="{{ route('store_subcounty') }}" method="POST">
     @csrf
     <div class="row">
         <div class="col-md-6 mb-3">
-            <label for="exampleInputUsername2">Ward Name</label>
-            <input type="text" name="ward_name" class="form-control" placeholder="Enter Ward Name" required>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="exampleInputUsername2">Location ID</label>
-                <select class="form-select" name="location_id" id="locations">
-                    @foreach ($locations as $location)
-                    <option value="{{ $location->id }}">{{ $location->id }}</option>
-                    @endforeach
-                </select>
-            </div>
+            <label for="exampleInputUsername2">Location Name</label>
+            <input type="text" name="location_name" class="form-control" placeholder="Enter Location Name" required>
         </div>
 
         <div class="col-md-6">
@@ -38,10 +27,8 @@
                 </select>
             </div>
         </div>
-        
-
     </div>
 <div>
-    <button type="submit" class="btn btn-success mt-3">Add Ward</button>
+    <button type="submit" class="btn btn-success mt-3">Add Sub-county</button>
 </div>
 </form>
