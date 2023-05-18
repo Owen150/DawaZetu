@@ -27,7 +27,6 @@
     <li class="breadcrumb-item"><a href="{{ route('notes.index') }}">Notes Proforma Invoices</a></li>
     <li class="breadcrumb-item active" aria-current="page">Notes Proforma Invoices Table</li>
   </ol>
-
   <div class="cancel">
     <div></div>
     <a href="{{route('notes.create')}}"><button class="btn btn-success mb-1 mb-md-0">Generate Invoice</button></a>
